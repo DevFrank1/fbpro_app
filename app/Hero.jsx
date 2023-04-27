@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createStyles, Container, Text, Button, Group, rem } from '@mantine/core';
 import { GithubIcon } from '@mantine/ds';
+import { TypeAnimation } from "react-type-animation";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -67,46 +68,52 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function Hero() {
-    const { classes } = useStyles();
-  
-    return (
-      <div className={classes.wrapper}>
-        <Container size={700} className={classes.inner}>
-          <h1 className={classes.title}>
-            A{' '}
-            <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
-              fully featured
-            </Text>{' '}
-            React components and hooks library
-          </h1>
-  
-          <Text className={classes.description} color="dimmed">
-            Build fully functional accessible web applications with ease – Mantine includes more than
-            100 customizable components and hooks to cover you in any situation
-          </Text>
-  
-          <Group className={classes.controls}>
-            <Button
-              size="xl"
-              className={classes.control}
-              variant="gradient"
-              gradient={{ from: 'blue', to: 'cyan' }}
-            >
-              Get started
-            </Button>
-  
-            <Button
-              component="a"
-              href="https://github.com/mantinedev/mantine"
-              size="xl"
-              variant="default"
-              className={classes.control}
-              leftIcon={<GithubIcon size={20} />}
-            >
-              GitHub
-            </Button>
-          </Group>
-        </Container>
-      </div>
-    );
-  }
+  const { classes } = useStyles();
+
+  return (
+    <div className={classes.wrapper}>
+      <Container size={700} className={classes.inner}>
+        <h1 className={classes.title}>
+          Hi<span style={{ color: 'orange' }}>,</span> I<span style={{ color: 'orange' }}>'</span>m
+          <br />
+          <Text component="span" variant="gradient" gradient={{ from: 'cyan', to: 'black' }} inherit>
+            Farid Baylarzade
+          </Text>{' '}
+          {/* <TypeAnimation
+              style={{display: 'block', color: 'black'}}
+              cursor={true}
+              sequence={['Farid Baylarzade', 2000]} 
+              speed={1}
+              repeat={Infinity}/> */}
+        </h1>
+
+        <Text className={classes.description} color="dimmed">
+          Build fully functional accessible web applications with ease – Mantine includes more than
+          100 customizable components and hooks to cover you in any situation
+        </Text>
+
+        <Group className={classes.controls}>
+          <Button
+            size="xl"
+            className={classes.control}
+            variant="gradient"
+            gradient={{ from: 'blue', to: 'cyan' }}
+          >
+            Get started
+          </Button>
+
+          <Button
+            component="a"
+            href="https://github.com/mantinedev/mantine"
+            size="xl"
+            variant="default"
+            className={classes.control}
+            leftIcon={<GithubIcon size={20} />}
+          >
+            GitHub
+          </Button>
+        </Group>
+      </Container>
+    </div>
+  );
+}
